@@ -1,0 +1,34 @@
+ules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2020, 10, 30);
+    }
+  }
+}
+
+
+  <v-layout align-center wrap>
+            <v-flex xs10 sm10 md10>
+              <v-card class="shadow">
+                <card :url="active" class="img" v-if="active" />
+                <v-img :src="project.img" v-else></v-img>
+              </v-card>
+            </v-flex>
+            <v-flex xs2 sm2 md2>
+              <v-layout column justify-center wrap>
+                <v-flex sm3 md3 xs3 v-for="i in project.images" :key="i.i">
+                  <v-card class="shadow mx-2">
+                    <v-img :src="i.i" width @click="image(i.i)"></v-img>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+
+          .v-carousel .v-carousel-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
