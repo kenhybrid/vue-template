@@ -3,19 +3,9 @@
     <div class="paralax">
       <v-layout column align-center justify-center class="top">
         <!-- <img src="../assets/nobg2.jpg" alt="alt" height="200" /> -->
-        <h1
-          class="pink--text mb-2 text-center head  wow fadeInUp "
-          data-wow-duration="0.3s"
-          data-wow-delay="0.3s"
-        >
-          PROJECTS
-        </h1>
-        <div
-          class="sub mb-3 text-center text-capitalize pink--text lighten-4 wow fadeInUp "
-          data-wow-duration="0.3s"
-          data-wow-delay="0.4s"
-        >
-          have a look at how ARuKenya styles and designs
+        <h1 class="pink--text mb-2 text-center head">PROJECTS</h1>
+        <div class="sub mb-3 text-center text-capitalize pink--text lighten-4">
+          have a look at our style and design projects
         </div>
       </v-layout>
     </div>
@@ -30,13 +20,9 @@
 
       <v-layout row wrap>
         <v-flex xs12 sm6 md6 v-for="project in projects" :key="project.id">
-          <v-card class="ma-3 shadow " :to="'/project/' + project.id">
+          <v-card class="ma-3 shadow" :to="'/project/' + project.id">
             <div class="inner">
-              <v-img
-                :src="project.img"
-                class="img"
-                :alt="project.poweredby"
-              ></v-img>
+              <v-img :src="project.img" class="img"></v-img>
             </div>
           </v-card>
         </v-flex>
@@ -70,7 +56,7 @@ export default {
           styledby: "@itslady_ru",
           poweredby: "house_of_aru",
           inspiration:
-            "This outfit is inspired by the cheetah print vibe with a little bit of chic and sass added in. It`s a funky wear which you can rock for a weekend out."
+            "This outfit is inspired by the cheta prit vibe with a little bit of chic and sass added in.It`s a funky wear which you can rock for a weekend out."
         },
         {
           id: "2",
@@ -86,7 +72,7 @@ export default {
           styledby: "@itslady_ru",
           poweredby: "house_of_aru",
           inspiration:
-            "Fur coats are always a must have in a closet in this case we showcased how one can style a fur coat. This look is for a girl who wants to wear light clothes during winter and still look stylish."
+            "Fur coats are always a must have in a closet in this case we showcased how one can style a fur coat.This look is for a girl who wants to wear light clothes during winter and still look stylish."
         }
       ]
     };
@@ -98,7 +84,7 @@ export default {
   },
   name: "projects",
   metaInfo: {
-    titleTemplate: "%s | design and style projects"
+    titleTemplate: "%s | design and style projects by arufashion"
   }
 };
 </script>
@@ -118,13 +104,13 @@ export default {
   font-size: 54px;
   letter-spacing: 1px;
   font-weight: 600;
-  font-family: "Lobster", cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sub {
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
 .top {
@@ -155,12 +141,12 @@ export default {
   font-size: 34px;
   letter-spacing: 1px;
   font-weight: 600;
-  font-family: "Lobster", cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sub1 {
   font-size: 15px;
   font-weight: 300;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 </style>

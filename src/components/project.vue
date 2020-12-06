@@ -1,58 +1,56 @@
 <template>
   <div>
     <v-container class=" pa-5">
+      <v-btn
+        text
+        color="pink lighten-2"
+        class="mx-5 px-5 py-4 my-4"
+        to="/projects"
+      >
+        <span right>back</span>
+      </v-btn>
       <v-layout row wrap>
         <v-flex xs12 sm6 md6>
-          <v-carousel hide-delimiter-background :cycle="2" class=" shadow">
-            <v-carousel-item
-              v-for="img in project.images"
-              :key="img.id"
-              :src="img.i"
-            ></v-carousel-item>
-          </v-carousel>
+          <v-layout align-center wrap>
+            <v-flex xs10 sm10 md10>
+              <v-card class="shadow">
+                <card :url="active" class="img" v-if="active" />
+                <v-img :src="project.img" v-else></v-img>
+              </v-card>
+            </v-flex>
+            <v-flex xs2 sm2 md2>
+              <v-layout column justify-center wrap>
+                <v-flex sm3 md3 xs3 v-for="i in project.images" :key="i.i">
+                  <v-card class="shadow mx-2">
+                    <v-img :src="i.i" width @click="image(i.i)"></v-img>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
         </v-flex>
-        <v-flex xs12 sm6 md6 class="pa-3 ">
-          <v-card
-            class="ma-2 pa-2 wow fadeInUp "
-            data-wow-duration="0.4s"
-            data-wow-delay="0.6s"
-          >
+        <v-flex xs12 sm6 md6 class="pa-3">
+          <v-card class="ma-2 pa-2">
             Model
             <br />
             <b>{{ project.model }}</b>
           </v-card>
-          <v-card
-            class="ma-2 pa-2 wow fadeInUp "
-            data-wow-duration="0.5s"
-            data-wow-delay="0.7s"
-          >
+          <v-card class="ma-2 pa-2">
             Outfit
             <br />
             <b>{{ project.outfit }}</b>
           </v-card>
-          <v-card
-            class="ma-2 pa-2 wow fadeInUp "
-            data-wow-duration="0.6s"
-            data-wow-delay="0.8s"
-          >
+          <v-card class="ma-2 pa-2">
             Styled By
             <br />
             <b>{{ project.styledby }}</b>
           </v-card>
-          <v-card
-            class="ma-2 pa-2 wow fadeInUp "
-            data-wow-duration="0.7s"
-            data-wow-delay="0.9s"
-          >
+          <v-card class="ma-2 pa-2">
             Powered By
             <br />
             <b>{{ project.poweredby }}</b>
           </v-card>
-          <v-card
-            class="ma-2 pa-2 wow fadeInUp "
-            data-wow-duration="0.8s"
-            data-wow-delay="1s"
-          >
+          <v-card class="ma-2 pa-2">
             Inspiration
             <br />
             <b>{{ project.inspiration }}</b>
@@ -60,26 +58,14 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-btn
-      fab
-      bottom
-      right
-      fixed
-      dark
-      small
-      color="pink"
-      to="/arukenya-projects"
-    >
-      <v-icon>mdi-close</v-icon>
-    </v-btn>
   </div>
 </template>
 
 <script>
-// import card from "./card";
+import card from "./card";
 export default {
   components: {
-    // card
+    card
   },
   props: ["id"],
   data() {
@@ -101,7 +87,7 @@ export default {
           styledby: "@itslady_ru",
           poweredby: "house_of_aru",
           inspiration:
-            "This outfit is inspired by the cheetah print vibe with a little bit of chic and sass added in. It`s a funky wear which you can rock for a weekend out."
+            "This outfit is inspired by the cheta prit vibe with a little bit of chic and sass added in.It`s a funky wear which you can rock for a weekend out."
         },
         {
           id: "2",
@@ -117,15 +103,11 @@ export default {
           styledby: "@itslady_ru",
           poweredby: "house_of_aru",
           inspiration:
-            "Fur coats are always a must have in a closet in this case we showcased how one can style a fur coat. This look is for a girl who wants to wear light clothes during winter and still look stylish."
+            "Fur coats are always a must have in a closet in this case we showcased how one can style a fur coat.This look is for a girl who wants to wear light clothes during winter and still look stylish."
         }
       ]
     };
   },
-  // beforeRouteEnter (to, from, next) {
-
-  //       next(this.$router.go() )
-  //   },
   computed: {
     project() {
       return this.projects.find(project => {
@@ -142,7 +124,7 @@ export default {
     }
   },
   metaInfo: {
-    titleTemplate: "%s |  style and design project"
+    titleTemplate: "%s | a style project by aru fashion"
   }
 };
 </script>

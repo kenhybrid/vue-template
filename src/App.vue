@@ -22,7 +22,7 @@ export default {
     //
   }),
   metaInfo: {
-    title: "arukenya",
+    title: "aru",
     titleTemplate: "%s | home",
     meta: [
       {
@@ -41,7 +41,3 @@ export default {
   }
 };
 </script>
-<style>
-html {
-}
-</style>

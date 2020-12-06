@@ -1,17 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-const home = () =>
-  import(/* webpackChunkName: "home" */ "../components/home.vue");
-const admin = () =>
-  import(/* webpackChunkName: "admin" */ "../components/admin.vue");
-const projects = () =>
-  import(/* webpackChunkName: "projects" */ "../components/projects.vue");
-const project = () =>
-  import(/* webpackChunkName: "project" */ "../components/project.vue");
-const contact = () =>
-  import(/* webpackChunkName: "feedback" */ "../components/contact.vue");
-const notfound = () =>
-  import(/* webpackChunkName: "feedback" */ "../components/notfound.vue");
+const home = () => import("../components/home.vue");
+const projects = () => import("../components/projects.vue");
+const project = () => import("../components/project.vue");
+const contact = () => import("../components/contact.vue");
+const admin = () => import("../components/admin.vue");
 
 Vue.use(VueRouter);
 
@@ -23,7 +16,7 @@ const routes = [
   },
 
   {
-    path: "/arukenya-projects",
+    path: "/projects",
     name: "Projects",
     component: projects
   },
@@ -34,33 +27,21 @@ const routes = [
     component: project
   },
   {
-    path: "/arukenya-contact",
+    path: "/contact",
     name: "Contact",
     component: contact
   },
   {
-    path: "/arukenya-emails",
+    path: "/admin",
     name: "Admin",
     component: admin
-  },
-  {
-    path: "/404",
-    name: "notfound",
-    component: notfound
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   base: process.env.BASE_URL,
   routes
 });
 
-router.beforeEach((to, from, next) => {
-  if (!to.matched.length) {
-    next("/404");
-  } else {
-    next();
-  }
-});
 export default router;

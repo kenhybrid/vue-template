@@ -5,22 +5,22 @@
         class=" hidden-sm-and-up"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-subheader class="hidden-xs-only">ARuKenya</v-subheader>
+      <v-subheader class="hidden-xs-only">ARU</v-subheader>
 
       <v-spacer></v-spacer>
-      <v-subheader class="hidden-sm-and-up">ARuKenya</v-subheader>
+      <v-subheader class="hidden-sm-and-up">ARU</v-subheader>
 
       <v-toolbar-items class="hidden-xs-only">
         <v-btn text class="--text" router to="/">
           <span>home</span>
           <!-- <v-icon>mdi-folder-cog-outline</v-icon> -->
         </v-btn>
-        <v-btn tile text class="--text" router to="/arukenya-projects">
+        <v-btn tile text class="--text" router to="/projects">
           <span>projects</span>
           <!-- <v-icon>mdi-folder-cog-outline</v-icon> -->
         </v-btn>
 
-        <v-btn tile text class="--text" router to="/arukenya-contact">
+        <v-btn tile text class="--text" router to="/contact">
           <span>contact</span>
           <!-- <v-icon>mdi-folder-cog-outline</v-icon> -->
         </v-btn>
@@ -29,7 +29,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" color="white" app temporary>
+    <v-navigation-drawer v-model="drawer" color="white" app temporary="true">
       <div>
         <v-list-item
           v-for="item in menu"
@@ -93,14 +93,10 @@ export default {
         { name: "Home", link: "/", icon: "mdi-home-outline" },
         {
           name: "Projects",
-          link: "/arukenya-projects",
+          link: "/projects",
           icon: "mdi-folder-settings-outline"
         },
-        {
-          name: "Contact",
-          link: "/arukenya-contact",
-          icon: "mdi-phone-outline"
-        }
+        { name: "Contact", link: "/contact", icon: "mdi-phone-outline" }
       ]
     };
   },
@@ -113,7 +109,7 @@ export default {
     login() {
       if (this.passcode == "arukenya1234") {
         this.admin = false;
-        this.$router.push("/arukenya-emails");
+        this.$router.push("/admin");
         this.passcode = "";
       } else {
         this.admin = false;

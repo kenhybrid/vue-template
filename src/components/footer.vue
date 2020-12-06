@@ -5,6 +5,7 @@
         <v-flex xs12 sm12 md12>
           <center class="py-2">
             <v-btn
+              flat
               icon
               color="primary"
               class="mx-3 hover"
@@ -13,6 +14,7 @@
               <v-icon large>mdi-facebook</v-icon>
             </v-btn>
             <v-btn
+              flat
               icon
               color="green"
               class="mx-3 hover"
@@ -21,6 +23,7 @@
               <v-icon large>mdi-whatsapp</v-icon>
             </v-btn>
             <v-btn
+              flat
               icon
               color="pink"
               class="mx-3 hover"
@@ -31,15 +34,7 @@
           </center>
           <!-- <hr class="mt-3 black"> -->
           <div class="white--text text-center pt-4">
-            arukenya &copy; {{ new Date().getFullYear() }} <br />
-            <v-btn
-              small
-              text
-              color="pink"
-              href="https://api.whatsapp.com/send?phone=254736278804&text=Hi%20there%2C
-%20i%20am%20a%20client%20intrested%20in%20a%20website%20like%20this..."
-              >@instant</v-btn
-            >
+            aru &copy; {{ new Date().getFullYear() }}
           </div>
         </v-flex>
       </v-layout>
